@@ -11,13 +11,15 @@
 <body>
     <nav class="container">
         <div class="row">
-            <img src="/assets/workplan.svg" alt="Workplan logo">
-            <button class="mobiletoggle">
+            <a href="/" class="logo">
+                <img src="/assets/workplan.svg" alt="Workplan logo">
+            </a>
+            <button class="mobiletoggle" id="mobileToggle" onclick="ToggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="navheader">
+            <ul class="navheader" id="menu">
                 <li><a class="active" href="/">Forside</a></li>
                 <li><a href="/">Funktioner</a></li>
                 <li><a href="/">Priser</a></li>
@@ -114,5 +116,17 @@
     <footer>
         Content
     </footer>
+    <script>
+        var toggle = document.getElementById('mobileToggle')
+        var menu = document.getElementById('menu')
+        var body = document.getElementsByTagName('body')
+
+        function ToggleMenu() {
+            console.log('Toggled menu')
+            toggle.classList.toggle('active')
+            menu.classList.toggle('active')
+            body[0].classList.toggle('lock')
+        }
+    </script>
 </body>
 </html>
