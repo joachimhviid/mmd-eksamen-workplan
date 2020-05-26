@@ -87,8 +87,12 @@ a.button.secondary:hover {
   z-index: -5;
 }
 
+.hero.active::after {
+  top: 40px;
+}
+
 .hero .container {
-  margin-top: 200px;
+  margin-top: 160px;
 }
 
 .hero h1 {
@@ -106,7 +110,7 @@ a.button.secondary:hover {
 }
 
 nav.container {
-  top: 40px;
+  margin-top: 40px;
 }
 
 nav.container .row {
@@ -116,7 +120,7 @@ nav.container .row {
 }
 
 nav.container .row img {
-  position: absolute;
+  position: relative;
   left: 20px;
   height: 14px;
   z-index: 5;
@@ -202,6 +206,11 @@ nav.container ul.active a.login {
   border: none;
   padding: 0;
   color: #4E8DE5;
+}
+
+nav.container ul.active a.login:hover {
+  background-color: transparent;
+  color: #3D6EB3;
 }
 
 nav.container ul a {
@@ -409,10 +418,221 @@ section#prices .offer a:hover {
   color: #fff;
 }
 
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form h1 {
+  margin-bottom: 10px;
+}
+
+form p {
+  margin-bottom: 40px;
+}
+
+form .input {
+  position: relative;
+  /* Firefox */
+}
+
+form .input input[type="email"], form .input input[type="password"], form .input input[type="number"], form .input input[type="text"] {
+  border: none;
+  border-bottom: 1px solid #E3EFFF;
+  background-color: transparent;
+  width: 100%;
+  padding: 32px 0 16px;
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
+
+form .input input[type="email"]:focus + label, form .input input[type="password"]:focus + label, form .input input[type="number"]:focus + label, form .input input[type="text"]:focus + label {
+  -webkit-transform: translateY(-115%);
+          transform: translateY(-115%);
+  font-size: .75rem;
+}
+
+form .input input[type="email"]:valid + label, form .input input[type="password"]:valid + label, form .input input[type="number"]:valid + label, form .input input[type="text"]:valid + label {
+  -webkit-transform: translateY(-115%);
+          transform: translateY(-115%);
+  font-size: .75rem;
+}
+
+form .input input::-webkit-outer-spin-button,
+form .input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+form .input input[type=number] {
+  -moz-appearance: textfield;
+}
+
+form .input label {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  cursor: text;
+  -webkit-transition: font-size .2s, -webkit-transform .2s;
+  transition: font-size .2s, -webkit-transform .2s;
+  transition: font-size .2s, transform .2s;
+  transition: font-size .2s, transform .2s, -webkit-transform .2s;
+}
+
+form .input label span {
+  color: #666666;
+}
+
+form .input.checkbox {
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+form .input.checkbox input[type="checkbox"] {
+  opacity: 0;
+  height: 1px;
+  width: 1px;
+  position: absolute;
+}
+
+form .input.checkbox input[type="checkbox"] + label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  top: 0;
+  font-size: .875rem;
+  color: #B3B5BF;
+}
+
+form .input.checkbox input[type="checkbox"] + label:before {
+  content: '';
+  margin-right: 10px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 3px;
+  background-color: #E3EFFF;
+  border-radius: 2px;
+  -webkit-transition: background-color .1s;
+  transition: background-color .1s;
+}
+
+form .input.checkbox input[type="checkbox"]:hover + label:before {
+  background-color: #f9f9f9;
+}
+
+form .input.checkbox input[type="checkbox"]:checked + label:before {
+  background-color: #4E8DE5;
+}
+
+form .input.checkbox input[type="checkbox"]:checked + label:after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 9px;
+  background: white;
+  width: 2px;
+  height: 2px;
+  -webkit-box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+          box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+form input[type="button"] {
+  border: none;
+  background-color: #4E8DE5;
+  color: #fff;
+  padding: 13px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
+}
+
+form input[type="button"]:hover {
+  background-color: #3D6EB3;
+}
+
+section#loginSection {
+  margin-top: 160px;
+}
+
+section#loginSection form h1 {
+  margin-bottom: 10px;
+}
+
+section#loginSection form p {
+  margin-bottom: 40px;
+}
+
+section#register {
+  margin-top: 160px;
+}
+
+section#register .uri input#uri {
+  padding-left: 105px;
+}
+
+section#register .uri input#uri + label {
+  -webkit-transform: translateY(-115%);
+          transform: translateY(-115%);
+  font-size: .75rem;
+}
+
+section#register .uri a {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  color: #B3B5BF;
+}
+
+section#register input[type="button"] {
+  width: 45%;
+}
+
+section#register input[type="button"].full {
+  width: 100%;
+}
+
+section#register input[type="button"].back {
+  background-color: #fff;
+  border: 1px solid #4E8DE5;
+  color: #4E8DE5;
+  margin-right: 12px;
+}
+
+section#register input[type="button"].back:hover {
+  background-color: #E3EFFF;
+}
+
 footer {
   background-color: #383C48;
   height: 300px;
   width: 100%;
+}
+
+footer.copyright {
+  background-color: transparent;
+  margin-top: 140px;
+  height: auto;
+}
+
+footer.copyright p {
+  font-size: .875rem;
+  line-height: 1.5;
+  color: #666666;
+}
+
+footer.copyright span {
+  color: #4E8DE5;
+  font-size: .875rem;
 }
 
 @media screen and (min-width: 768px) {

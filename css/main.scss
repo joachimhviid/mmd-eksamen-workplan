@@ -94,8 +94,12 @@ a.button {
         z-index: -5;
     }
 
+    &.active::after {
+        top: 40px;
+    }
+
     .container {
-        margin-top: 200px;
+        margin-top: 160px;
     }
 
     h1 {
@@ -114,13 +118,13 @@ a.button {
 }
 
 nav.container {
-    top: 40px;
+    margin-top: 40px;
 
     .row {
         display: flex;
 
         img {
-            position: absolute;
+            position: relative;
             left: 20px;
             height: 14px;
             z-index: 5;
@@ -188,6 +192,11 @@ nav.container {
                     border: none;
                     padding: 0;
                     color: $blue_main;
+
+                    &:hover {
+                        background-color: transparent;
+                        color: $blue_dark;
+                    }
                 }
             }
         }
@@ -390,10 +399,219 @@ section#prices {
     }
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 40px;
+    }
+
+    .input {
+        position: relative;
+
+        input[type="email"], input[type="password"], input[type="number"], input[type="text"] {
+            border: none;
+            border-bottom: 1px solid $blue_light;
+            background-color: transparent;
+            width: 100%;
+            padding: 32px 0 16px;
+            margin-bottom: 14px;
+            font-size: 1rem;
+
+            &:focus+label {
+                transform: translateY(-115%);
+                font-size: .75rem;
+            }
+
+            &:valid+label {
+                transform: translateY(-115%);
+                font-size: .75rem;
+            }
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+
+        label {
+            position: absolute;
+            top: 32px;
+            left: 0;
+            cursor: text;
+            transition: font-size .2s, transform .2s;
+
+            span {
+                color: $offer_text;
+            }
+        }
+
+        &.checkbox {
+            margin-top: 8px;
+            margin-bottom: 32px;
+
+            input[type="checkbox"] {
+                opacity: 0;
+                height: 1px;
+                width: 1px;
+                position: absolute;
+
+                & + label {
+                    position: relative;
+                    cursor: pointer;
+                    padding: 0;
+                    top: 0;
+                    font-size: .875rem;
+                    color: $para_text;
+                }
+
+                & + label:before {
+                    content: '';
+                    margin-right: 10px;
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    position: relative;
+                    top: 3px;
+                    background-color: $blue_light;
+                    border-radius: 2px;
+                    transition: background-color .1s;
+                }
+
+                &:hover + label:before {
+                    background-color: #f9f9f9;
+                }
+
+                &:checked + label:before {
+                    background-color: $blue_main;
+                }
+
+                &:checked + label:after {
+                    content: '';
+                    position: absolute;
+                    left: 3px;
+                    top: 9px;
+                    background: white;
+                    width: 2px;
+                    height: 2px;
+                    box-shadow: 
+                        2px 0 0 white,
+                        4px 0 0 white,
+                        4px -2px 0 white,
+                        4px -4px 0 white,
+                        4px -6px 0 white,
+                        4px -8px 0 white;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+
+    input[type="button"] {
+        border: none;
+        background-color: $blue_main;
+        color: #fff;
+        padding: 13px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color .2s;
+
+        &:hover {
+            background-color: $blue_dark;
+        }
+    }
+
+}
+
+section#loginSection {
+    margin-top: 160px;
+
+    form {
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+section#register {
+    margin-top: 160px;
+
+    .uri {
+        input#uri {
+            padding-left: 105px;
+
+            &+label {
+                transform: translateY(-115%);
+                font-size: .75rem;
+            }
+        }
+
+        a {
+            position: absolute;
+            top: 32px;
+            left: 0;
+            color: $para_text;
+        }
+    }
+
+
+    input[type="button"] {
+        width: 45%;
+
+        &.full {
+            width: 100%;
+        }
+
+        &.back {
+            background-color: #fff;
+            border: 1px solid $blue_main;
+            color: $blue_main;
+            margin-right: 12px;
+
+            &:hover {
+                background-color: $blue_light;
+            }
+        }
+    }
+}
+
 footer {
     background-color: #383C48;
     height: 300px;
     width: 100%;
+
+    &.copyright {
+        background-color: transparent;
+        margin-top: 140px;
+        height: auto;
+
+        p {
+            font-size: .875rem;
+            line-height: 1.5;
+            color: $offer_text;
+        }
+
+        span {
+            color: $blue_main;
+            font-size: .875rem;
+        }
+    }
 }
 
 // Small devices | Phones

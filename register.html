@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="alternate icon" href="/assets/favicon.ico">
+    <title>Workplan | Register</title>
+</head>
+<body>
+    <nav class="container">
+        <div class="row">
+            <a href="/" class="logo">
+                <img src="/assets/workplan.svg" alt="Workplan logo">
+            </a>
+        </div>
+    </nav>
+    <section id="register">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="notification"></div>
+
+                    <form id="form">
+                        <h1>Opret din virksomhed</h1>
+                        <div data-step="1">
+                            <p>Indtast CVR nummer</p>
+                            <div class="input">
+                                <input name="cvr" type="number" id="cvr" required />
+                                <label for="cvr">CVR nummer</label>
+                            </div>
+                            <input class="full" type="button" value="Fortsæt" data-id="continue" onclick="steps(2)" />
+                        </div>
+                
+                        <div data-step="2">
+                            <p>Indtast virksomhedsnavn</p>
+                            <div class="input uri">
+                                <input id="uri" name="uri" type="text" onkeyup="this.value=this.value.toLowerCase()" required />
+                                <label for="uri">Virksomhedsnavn</label>
+                                <a>workplan.dk/</a>
+                            </div>
+                            <input type="button" value="Tilbage" data-id="back" onClick="steps(1)" class="back" />
+                            <input type="button" value="Fortsæt" data-id="continue" onClick="steps(3)" />
+                        </div>
+                
+                        <div data-step="3">
+                            <input name="company" type="hidden" />
+                            <p>Indtast email adresse</p>
+                            <div class="input">
+                                <input name="email" id="email" type="email" required />
+                                <label for="email">Email adresse</label>
+                            </div>
+                            <input type="button" value="Tilbage" data-id="back" onClick="steps(2)" class="back" />
+                            <input type="button" value="Opret vagtplan" data-id="submit" />
+                        </div>
+                
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="copyright">
+        <div class="container">
+            <p>Copyright © 2020 Workplan. Alle Rettigheder Reserveret.</p>
+            <span>Powered by Netclear</span>
+        </div>
+    </footer>
+
+    <script>
+        var select = function(id) { return document.querySelector(id) };
+        var selectAll = function(id) { return document.querySelectorAll(id) };
+        
+        function notify(type, message) {
+            select('div.notification').innerHTML = '<div class="notify-'+type+'">'+message+'</div>';
+        }
+        
+        var visible = 1;
+        function steps(id) {
+            var steps = selectAll('[data-step]');
+            for (var i=0,l=steps.length; i<l; i++) {
+                steps[i].style.display = 'none';
+            }
+            select('div.notification').innerHTML = '';
+            select('[data-step="'+id+'"]').style.display = 'inline-block';
+            visible = id;
+        }
+    </script>
+</body>
+</html>
+
+<style>
+    div[data-step] {
+        display: none;
+    }
+    div[data-step='1'] {
+        display: inline-block;
+    }
+</style>

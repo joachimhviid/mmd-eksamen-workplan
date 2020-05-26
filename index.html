@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
                 <li><a href="/">Funktioner</a></li>
                 <li><a href="/">Priser</a></li>
                 <li><a href="/">Kontakt</a></li>
-                <li><a class="button login" href="/">Log ind</a></li>
+                <li><a class="button login" href="/login.html">Log ind</a></li>
             </ul>
         </div>
     </nav>
@@ -34,7 +34,7 @@
                 <div class="col-sm-7">
                     <h1>Gratis vagtplan til <br>både private og erhverv</h1>
                     <p>Workplan er simpel online vagtplanlægning til både private og erhverv. Opret vores gratis starter-pakke på få minutter eller find den pakke der bedst passer til dig og din virksomhed.</p>
-                    <a href="/" class="button primary">Kom godt igang</a>
+                    <a href="/register.html" class="button primary">Kom godt igang</a>
                 </div>
                 <div class="col-md-offset-1 col-sm-5 col-md-4">
                     <img class="splash" src="/assets/undraw_absorbed_in_xahs.svg" alt="undraw man absorbed with work">
@@ -120,12 +120,14 @@
         var toggle = document.getElementById('mobileToggle')
         var menu = document.getElementById('menu')
         var body = document.getElementsByTagName('body')
+        var heroImg = document.getElementsByClassName('hero')
 
         function ToggleMenu() {
             console.log('Toggled menu')
             toggle.classList.toggle('active')
             menu.classList.toggle('active')
             body[0].classList.toggle('lock')
+            heroImg[0].classList.toggle('active')
         }
     </script>
 </body>
