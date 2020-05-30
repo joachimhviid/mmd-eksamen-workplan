@@ -598,8 +598,44 @@ section#register {
 
 footer {
     background-color: #383C48;
-    height: 300px;
+    // height: 300px;
     width: 100%;
+
+    img.logo {
+        display: block;
+        margin: 50px auto 40px;
+    }
+
+    ul {
+        display: flex;
+        width: 250px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: auto auto 40px;
+
+        li {
+            margin: 12px 15px;
+            a {
+                text-decoration: none;
+                color: #fff;
+                font-size: .875rem;
+                transition: color .2s;
+
+                &:hover {
+                    color: #c5c5c5;
+                }
+            }
+        }
+
+        &.footerinfo {
+            width: 100%;
+            color: #fff;
+            font-size: .875rem;
+            margin-bottom: 0;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+    }
 
     &.copyright {
         background-color: transparent;

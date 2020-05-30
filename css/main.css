@@ -616,8 +616,50 @@ section#register input[type="button"].back:hover {
 
 footer {
   background-color: #383C48;
-  height: 300px;
   width: 100%;
+}
+
+footer img.logo {
+  display: block;
+  margin: 50px auto 40px;
+}
+
+footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 250px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: auto auto 40px;
+}
+
+footer ul li {
+  margin: 12px 15px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: .875rem;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+footer ul li a:hover {
+  color: #c5c5c5;
+}
+
+footer ul.footerinfo {
+  width: 100%;
+  color: #fff;
+  font-size: .875rem;
+  margin-bottom: 0;
+  text-align: center;
+  padding-bottom: 50px;
 }
 
 footer.copyright {
