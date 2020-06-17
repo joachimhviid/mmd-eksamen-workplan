@@ -6,7 +6,6 @@
 /** Colors **/
 body {
   font-family: OpenSans;
-  position: relative;
   overflow-x: hidden;
 }
 
@@ -65,6 +64,26 @@ a.button.secondary {
 
 a.button.secondary:hover {
   color: #3D6EB3;
+}
+
+#scrolltop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  padding: 0;
+  background-color: #4E8DE5;
+}
+
+#scrolltop img {
+  width: 60%;
+  height: 60%;
 }
 
 .hero {
@@ -770,6 +789,10 @@ footer.copyright span {
   }
   section#prices p {
     margin-bottom: 60px;
+  }
+  #scrolltop {
+    width: 50px;
+    height: 50px;
   }
 }
 

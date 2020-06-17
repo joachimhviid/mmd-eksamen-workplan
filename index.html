@@ -14,7 +14,7 @@
             <a href="/" class="logo">
                 <img src="/assets/workplan.svg" alt="Workplan logo">
             </a>
-            <button class="mobiletoggle" id="mobileToggle" onclick="ToggleMenu()">
+            <button class="mobiletoggle" id="mobileToggle" onclick="ToggleMenu()" aria-label="Mobile menu toggle">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -132,17 +132,36 @@
             </ul>
         </div>
     </footer>
+    <button id="scrolltop" aria-label="Scroll to top" onclick="GoTop()"><img src="/assets/chevron-up.svg" alt="Chevron facing up"></button>
     <script>
         var toggle = document.getElementById('mobileToggle')
         var menu = document.getElementById('menu')
         var body = document.getElementsByTagName('body')
         // var heroImg = document.getElementsByClassName('hero')
+        var scrolltop = document.getElementById('scrolltop')
 
         function ToggleMenu() {
             toggle.classList.toggle('active')
             menu.classList.toggle('active')
             body[0].classList.toggle('lock')
             // heroImg[0].classList.toggle('active')
+        }
+        
+        window.onscroll = function() {
+            scrolling()
+        }
+
+        function scrolling() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrolltop.style.display = "block"
+            } else {
+                scrolltop.style.display = "none"
+            }
+        }
+
+        function GoTop() {
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
         }
     </script>
 </body>
